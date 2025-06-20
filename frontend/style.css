@@ -1,0 +1,54 @@
+body, html {
+    margin: 0; padding: 0; height: 100%; width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden; background-color: #f0f0f0;
+}
+#app { display: flex; height: 100vh; }
+#map { flex-grow: 1; height: 100%; }
+/* #leaflet-container { background: #333; } - Removido para ter mapa colorido */
+
+#controls-panel {
+    width: 380px; background-color: #2c3e50; color: #ecf0f1;
+    padding: 15px; box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    display: flex; flex-direction: column; overflow: hidden;
+}
+h1, h2 { border-bottom: 2px solid #3498db; padding-bottom: 10px; margin: 10px 0;}
+h1 { font-size: 1.5em; } h2 { font-size: 1.2em; }
+
+#commands { margin-bottom: 20px; }
+#commands p { font-size: 0.9em; color: #bdc3c7; }
+#commands button {
+    width: 100%; padding: 12px; border: none; border-radius: 4px; cursor: pointer;
+    font-size: 1em; font-weight: bold; color: white;
+    transition: background-color 0.3s; margin-bottom: 10px;
+}
+#takeoff-btn { background-color: #27ae60; }
+#takeoff-btn:hover { background-color: #2ecc71; }
+#land-btn { background-color: #c0392b; }
+#land-btn:hover { background-color: #e74c3c; }
+
+#drone-list {
+    list-style-type: none; padding: 0; margin: 0;
+    flex-grow: 1; overflow-y: auto;
+}
+#drone-list li {
+    background-color: #34495e; margin-bottom: 8px; padding: 10px;
+    border-radius: 4px; border-left: 5px solid; font-size: 0.9em;
+}
+/* Cores por status */
+.status-Idle, .status-Holding { border-color: #f1c40f; } /* Amarelo */
+.status-Moving, .status-Returning, .status-TakingOff { border-color: #2ecc71; } /* Verde */
+.status-Landing { border-color: #e67e22; } /* Laranja */
+.status-Comms_Lost { border-color: #9b59b6; } /* Roxo */
+.status-Landed, .status-Disconnected { border-color: #95a5a6; } /* Cinza */
+.status-Offline { border-color: #e74c3c; opacity: 0.6; } /* Vermelho */
+
+#log-panel {
+    background-color: #1f2a36; height: 150px; border-radius: 4px;
+    padding: 10px; overflow-y: scroll; font-family: 'Courier New', monospace;
+    font-size: 0.8em; border: 1px solid #444; flex-shrink: 0;
+}
+.log-entry { margin-bottom: 5px; }
+.log-info { color: #ecf0f1; }
+.log-warning { color: #f39c12; }
+.log-alert { color: #e74c3c; font-weight: bold; }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEA v2.1 - Plataforma Tática Interativa</title>
+    <!-- Dependências do Leaflet e Leaflet.Draw -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div id="map"></div>
+        <div id="controls-panel">
+            <h1>Plataforma Tática SEA</h1>
+            <div id="commands">
+                <p><b>Clique com o botão direito no mapa para definir um alvo Go-To para o enxame.</b></p>
+                <button id="takeoff-btn">DECOLAR ENXAME</button>
+                <button id="land-btn">POUSAR ENXAME</button>
+            </div>
+            <h2>Status do Enxame</h2>
+            <ul id="drone-list"></ul>
+            <h2>Log de Eventos</h2>
+            <div id="log-panel"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
